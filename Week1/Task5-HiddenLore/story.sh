@@ -1,5 +1,11 @@
 #! /bin/bash
 
+if (($# < 3))
+then
+    echo "Usage: ./story.sh <directory> <first key> <output-file>"
+    exit 1
+fi
+
 output=$3
 dir=$1
 

@@ -6,7 +6,7 @@ then
 	exit 1
 fi
 
-wget -q --recursive --no-parent -nH --cut-dirs=$3 $2
+wget -q --recursive --no-parent -nH --reject "index*" --cut-dirs=$3 $2
 
 filename="$(basename $1)"
 
@@ -24,7 +24,7 @@ do
 done
 
 cd $folder
-mkdir my_outputs
+mkdir -p my_outputs
 cd .. 
 
 echo "Failed testcases are:" > feedback.txt 
