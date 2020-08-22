@@ -1,10 +1,16 @@
 #! /bin/bash
 
+if (($#!=3))
+then 
+    echo "Usage: ./story.sh /path/to/directory <first key> /path/to/output-file" >&2
+    exit 1
+fi
+
 output=$3
 dir=$1
 
 rm -f $output
-num_of_files=$(ls -1 $dir|wc -l)
+touch $output
 
 declare -a file
 

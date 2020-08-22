@@ -16,9 +16,9 @@ g++ $filename
 
 folder="$(basename $2)"
 
-cd $folder
-mkdir -p my_outputs
-cd .. 
+# cd $folder
+mkdir -p $folder/my_outputs
+# cd .. 
 
 echo "Failed testcases are:" > feedback.txt 
 
