@@ -1,30 +1,23 @@
 #!/bin/bash 
 
-if [ $# -lt 3 ]
+if (( $# != 3 ))
 then
 	echo "Usage: ./verifier.sh <source file> <testcases url> <cut-dirs arg>"
 	exit 1
 fi
 
-wget -q --recursive --no-parent -nH --cut-dirs=$3 $2
+wget -q --recursive --no-parent -nH --reject "index.html*" --cut-dirs=$3 $2
 
 filename="$(basename $1)"
 
-cp $1 . 
+cp $1 . 2>/dev/null
 
 g++ $filename
 
-
-for d in *
-do
-	if [ -d "$d" ]
-	then
-		folder=$d
-	fi
-done
+folder="$(basename $2)"
 
 cd $folder
-mkdir my_outputs
+mkdir -p my_outputs
 cd .. 
 
 echo "Failed testcases are:" > feedback.txt 
