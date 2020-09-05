@@ -19,7 +19,7 @@ def s1(k,x,n):
 def s2(k,x,n):
     try:
         v = RingInt(1,n)
-        for i in range(1,x+k-1):
+        for i in range(1,x+k):
             v = v*RingInt(i, n)
         r = RingInt(x,n)
         fac = [v/v]
