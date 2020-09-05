@@ -8,7 +8,7 @@ my_parser.add_argument('-out', action='store', type=str, required=True)
 args = my_parser.parse_args()
 s = ""
 with open(args.inp,'r') as f:
-    s=f.read()
+    s=f.read().rstrip()
 if s[-1]=='\n':
     s=s[:-1]
 files = s.split('/')
