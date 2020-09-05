@@ -21,7 +21,8 @@ wish_counter = {}
 with open(args.ch, "r") as f:
 	lines = f.readlines()
 	n = int(lines[0])
-	for wish in lines[1:]:
+	for count in range(n):
+		wish = lines[count+1]
 		current = [int(x) for x in wish.split()]
 		if current[0] in wish_counter.keys():
 			wish_counter[current[0]].append(current[1])

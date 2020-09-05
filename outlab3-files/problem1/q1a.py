@@ -19,9 +19,9 @@ def s2(k,x,n):
     try:
         v = RingInt(1,n)
         for i in range(1,x+k-1):
-            v = v*RingInt(i)
+            v = v*RingInt(i, n)
         r = RingInt(x,n)
-        fac = [RingInt(v/v,n)]
+        fac = [v/v]
         P = RingInt(1,n)
         for i in range(1,k):
             I = RingInt(i,n)
