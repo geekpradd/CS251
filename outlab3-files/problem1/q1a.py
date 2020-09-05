@@ -3,6 +3,7 @@ import argparse
 from ring import RingInt
 def s1(k,x,n):
     try:
+        # if k==0:
         r = RingInt(1,n)
         fac = RingInt(1,n)
         S = RingInt(1,n)
@@ -28,10 +29,10 @@ def s2(k,x,n):
             fac = [fac[j]*(r+I)/(RingInt(1+j,n)) for j in range(i)]
             fac.insert(0,RingInt(1,n))
             s = RingInt(0,n)
-            for i in fac:
-                s=s+fac[i]
+            for j in fac:
+                s=s+j
             P = P*s
-            print(P)
+            # print(P)
         return P.__str__() 
     except ValueError:
         return "UNDEFINED"
