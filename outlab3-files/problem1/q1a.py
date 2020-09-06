@@ -3,7 +3,8 @@ import argparse
 from ring import RingInt
 def s1(k,x,n):
     try:
-        # if k==0:
+        if k<=0:
+            return "UNDEFINED"
         r = RingInt(1,n)
         fac = RingInt(1,n)
         S = RingInt(1,n)
@@ -18,6 +19,8 @@ def s1(k,x,n):
 
 def s2(k,x,n):
     try:
+        if k<=0 or x<0:
+            return "UNDEFINED"
         v = RingInt(1,n)
         for i in range(1,x+k):
             v = v*RingInt(i, n)
@@ -39,6 +42,8 @@ def s2(k,x,n):
 
 def s3(k,x,n):
     try:
+        if k<0:
+            return "UNDEFINED"       
         S = RingInt(0,n)
         for i in range(1,k+1):
             S = S+RingInt(i,n)**x
@@ -47,7 +52,7 @@ def s3(k,x,n):
         return "UNDEFINED" 
 
 my_parser = argparse.ArgumentParser()
-my_parser.add_argument('-in', action='store', type=str, required=True, dest='inp')
+my_parser.add_argument('-inp', action='store', type=str, required=True, dest='inp')
 my_parser.add_argument('-out', action='store', type=str, required=True)
 
 args = my_parser.parse_args()
@@ -55,6 +60,8 @@ o = open(args.out,'w')
 f = open(args.inp,'r')
 for line in f:
     inp = line.rstrip()
+    if inp=='':
+        continue
     k,x,n,t = [int(i) for i in inp.split(' ')]
     if t==1:
         s = s1(k,x,n)

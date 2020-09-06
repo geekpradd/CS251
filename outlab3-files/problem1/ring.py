@@ -38,7 +38,12 @@ class RingInt:
             return RingInt((self.val*other.val),self.ch)
 
     def __pow__(self,other):
-        return RingInt((self.val**other),self.ch)
+        x = RingInt(self.val,self.ch)
+        if other < 0:
+            x = RingInt(1,self.ch)/x
+            return x**(-other)        
+        else:
+            return RingInt(self.val**other,self.ch) 
 
 
     def __truediv__(self,other):

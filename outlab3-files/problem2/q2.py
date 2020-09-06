@@ -2,7 +2,7 @@
 import argparse
 
 my_parser = argparse.ArgumentParser()
-my_parser.add_argument('-in', action='store', type=str, required=True, dest='inp')
+my_parser.add_argument('-inp', action='store', type=str, required=True, dest='inp')
 my_parser.add_argument('-out', action='store', type=str, required=True)
 
 args = my_parser.parse_args()

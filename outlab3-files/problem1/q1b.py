@@ -15,16 +15,20 @@ flag  =False
 for l in lines[1:]:
     if flag:
         break
-    possible = re.findall('\$\([\d,]+\)#\([\d,]+\)\$',l)
+    possible = re.findall('\$\([\d,-]+\)#\([\d,]+\)\$',l)
+    print(possible)
     for e in possible:
-        x,y = e.split(')#(')
-        x = x[2:]
-        y = y[:-2]
-        A = [int(i) for i in x.split(',')]
-        B = [int(i) for i in y.split(',')]
+        try:
+            x,y = e.split(')#(')
+            x = x[2:]
+            y = y[:-2]
+            A = [int(i) for i in x.split(',')]
+            B = [int(i) for i in y.split(',')]
+        except:
+            continue
         sum = RingInt(0,n)
         for i,a in enumerate(A):
-            if a>=n:
+            if a>=n or a<0:
                 flag=True
                 break
             sum = sum+RingInt((i+1)*a,n)
@@ -33,7 +37,7 @@ for l in lines[1:]:
             break
         sum = RingInt(0,n)
         for i,b in enumerate(B):
-            if b>=n:
+            if b>=n or b<0:
                 flag=True
                 break
             sum = sum+RingInt((i+1)*b,n)
