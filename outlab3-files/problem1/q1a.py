@@ -42,7 +42,7 @@ def s2(k,x,n):
 
 def s3(k,x,n):
     try:
-        if k<0:
+        if k<=0:
             return "UNDEFINED"       
         S = RingInt(0,n)
         for i in range(1,k+1):
