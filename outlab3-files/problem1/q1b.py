@@ -16,7 +16,6 @@ for l in lines[1:]:
     if flag:
         break
     possible = re.findall('\$\([\d,-]+\)#\([\d,]+\)\$',l)
-    print(possible)
     for e in possible:
         try:
             x,y = e.split(')#(')
