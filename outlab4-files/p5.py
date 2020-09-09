@@ -13,7 +13,7 @@ begin = False
 data_points = []
 day_points = []
 for i, row in df.iterrows():
-	if (row['Date'].strip() == '01 April'):
+	if (row['Date'].strip() == '15 April'):
 		j = i 
 		begin = True 
 	if begin:
