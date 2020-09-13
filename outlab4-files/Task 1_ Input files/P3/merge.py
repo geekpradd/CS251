@@ -28,6 +28,6 @@ pu = np.round(infu[1:].astype(np.float)/unlock[tu][1:].astype(np.float),decimals
 pu = np.concatenate((['Positivity Rate(UnLock)'],pu))
 pl = np.concatenate((['Positivity Rate(Lock)'],pl))
 infl[0] = 'Infected(Lock)'
-infu[0] = 'Infected(Unlock)'
+infu[0] = 'Infected(UnLock)'
 combined = np.vstack((data[d],infu,infl, pl, pu))
 np.savetxt('info_combine.csv',combined.T,delimiter=',',fmt='%s')
