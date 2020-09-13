@@ -1,0 +1,9 @@
+Vectorize:
+https://numpy.org/doc/stable/reference/generated/numpy.vectorize.html
+numpy.round:
+https://numpy.org/doc/stable/reference/generated/numpy.round_.html
+pyplot.imread:
+https://matplotlib.org/3.3.1/api/_as_gen/matplotlib.pyplot.imread.html
+Surface Plots:
+https://www.tutorialspoint.com/matplotlib/matplotlib_3d_surface_plot.htm
+https://matplotlib.org/2.0.2/examples/mplot3d/text3d_demo.html
