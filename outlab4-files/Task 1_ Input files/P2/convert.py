@@ -19,5 +19,5 @@ data[test][0] = 'Tests per Million'
 data[test][1:] = np.round(data[test][1:].astype(np.float)*1e6/pop).astype(np.int).astype(str)
 # print(list(data))
 data = data.T
-print(data)
+# print(data)
 np.savetxt('transformed.csv',data,delimiter=',',fmt='%s')
