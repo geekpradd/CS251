@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 import numpy as np
 from scipy import stats
-from math import floor
+from math import ceil
 
 url="https://api.covid19india.org/csv/latest/case_time_series.csv"
 
@@ -37,6 +37,6 @@ plt.xlabel("Time in Days")
 plt.ylabel("Levitt’s Metric H(t)")
 plt.savefig('covid.png')
 
-day = floor((1-intercept)/slope) + 1
+day = ceil((1-intercept)/slope)
 
 print (day)
