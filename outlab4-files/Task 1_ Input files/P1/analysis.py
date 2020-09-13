@@ -23,10 +23,14 @@ for i, item in enumerate(data):
 	row = [titles[i], "{:.3f}".format(np.mean(array)), "{:.3f}".format(np.std(array))]
 	output_table.append(row)
 
-max_length = [max([len(item) for item in column]) for column in zip(*output_table)]
+max_length = []
+for column in zip(*output_table):
+	max_length.append(max([len(item) for item in column]))
 
-space_format = '\t'.join(['{{:{}}}'.format(length) for length in max_length])
+space_format = ''
 
+for length in max_length:
+	space_format += "{0}\t".format('{{:{}}}'.format(length))
 
 for row in output_table:
 	print(space_format.format(*row))
