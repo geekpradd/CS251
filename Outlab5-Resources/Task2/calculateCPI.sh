@@ -5,6 +5,7 @@ BEGIN {
     net_credit=0
     cpi=0
 }
+FNR==1{next}
 FNR==NR{
     a[$1] = $2;
     next

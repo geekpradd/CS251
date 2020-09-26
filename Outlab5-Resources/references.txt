@@ -5,3 +5,4 @@ https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
 https://www.commandlinefu.com/commands/view/3584/remove-color-codes-special-characters-with-sed
 https://stackoverflow.com/questions/14984340/using-awk-to-process-input-from-multiple-files
 https://www.thegeekstuff.com/2010/03/awk-arrays-explained-with-5-practical-examples/
+https://stackoverflow.com/questions/39849929/how-to-use-sed-to-extract-lines-in-specified-order
