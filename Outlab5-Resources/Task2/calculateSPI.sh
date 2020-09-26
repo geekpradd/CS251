@@ -17,6 +17,8 @@ FNR==NR{
         }
     }
 END {
-    printf "%.4f\n", spi/net_credit}
+    if(net_credit==0){printf "%.4f\n", 0}    
+    else {printf "%.4f\n", spi/net_credit}
+    }
 ' $2 $1
 
