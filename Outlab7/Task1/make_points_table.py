@@ -25,7 +25,8 @@ nrr = {}
 rows = cur.fetchall()
 
 for r in rows:
-	if r[3] == "Tie" or r[2]=="NULL":
+	if r[3].lower() == "tie" or r[2]=="NULL" or r[2] is None:
+		print(r[0])
 		points[r[0]] = points.get(r[0], 0) + 1
 		points[r[1]] = points.get(r[1], 0) + 1
 	else:
