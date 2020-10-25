@@ -9,7 +9,7 @@ id_name = {}
 rows = cur.fetchall()
 
 for r in rows:
-	if r[0] == "NULL":
+	if r[0] == "NULL" or r[0] == None:
 		continue 
 	id_name[r[0]] = r[1]
 
@@ -20,11 +20,11 @@ rows = cur.fetchall()
 wickets = {}
 
 for r in rows:
-	if r[0] == "Not Applicable" or r[0] == "NULL":
+	if r[0] == "Not Applicable" or r[0] == "NULL" or r[0] == None:
 		wick = 0
 	else:
 		wick = 1
-	if r[1] == "NULL":
+	if r[1] == "NULL" or r[1] == None:
 		continue 
 	wickets[r[1]] = wickets.get(r[1], 0) + wick
 

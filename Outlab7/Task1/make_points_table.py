@@ -25,13 +25,13 @@ nrr = {}
 rows = cur.fetchall()
 
 for r in rows:
-	if r[3] == "Tie" or r[2]=="NULL":
+	if r[3] == "Tie" or r[2]=="NULL" or r[2] == None:
 		points[r[0]] = points.get(r[0], 0) + 1
 		points[r[1]] = points.get(r[1], 0) + 1
 	else:
 		points[r[2]] = points.get(r[2], 0) + 2
 		margin = r[4]
-		if r[4] == "NULL":
+		if r[4] == "NULL" or r[4] == None:
 			margin = 0
 
 		if r[3] == "runs":

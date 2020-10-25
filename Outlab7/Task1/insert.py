@@ -14,6 +14,7 @@ def operate(f, table):
 				line += 1	
 			else:
 				query = """INSERT INTO {0}({1}) VALUES({2});""".format(table, base, ("'"+"', '".join(row) + "'"))
+				query = query.replace("'NULL'", "NULL")
 				c.execute(query)
 				line += 1
 
