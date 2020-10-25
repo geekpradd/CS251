@@ -18,10 +18,7 @@ if isinjectable:
         for items in c.fetchall():
         	print(",".join(map(str, items)))
     except:
-        try:
-            c.executescript(query)
-        except:
-            pass
+        pass
 else:
     query = "SELECT * FROM {} WHERE {} = ?".format(table,column)
     try:
