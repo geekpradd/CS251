@@ -25,17 +25,19 @@ nrr = {}
 rows = cur.fetchall()
 
 for r in rows:
-	if r[3].lower() == "tie" or r[2]=="NULL" or r[2] is None:
-		print(r[0])
+	if r[3] == "Tie" or r[2]=="NULL":
 		points[r[0]] = points.get(r[0], 0) + 1
 		points[r[1]] = points.get(r[1], 0) + 1
 	else:
 		points[r[2]] = points.get(r[2], 0) + 2
+		margin = r[4]
+		if r[4] == "NULL":
+			margin = 0
 
 		if r[3] == "runs":
-			value = r[4]/20.0 
+			value = margin/20.0 
 		else:
-			value = r[4]/10.0
+			value = margin/10.0
 		if r[0] == r[2]:
 			loser = r[1]
 		else:

@@ -9,6 +9,8 @@ id_name = {}
 rows = cur.fetchall()
 
 for r in rows:
+	if r[0] == "NULL":
+		continue 
 	id_name[r[0]] = r[1]
 
 cur.execute("SELECT out_type, bowler FROM BALL_BY_BALL")
@@ -18,10 +20,12 @@ rows = cur.fetchall()
 wickets = {}
 
 for r in rows:
-	if r[0] != "Not Applicable":
-		wick = 1
-	else:
+	if r[0] == "Not Applicable" or r[0] == "NULL":
 		wick = 0
+	else:
+		wick = 1
+	if r[1] == "NULL":
+		continue 
 	wickets[r[1]] = wickets.get(r[1], 0) + wick
 
 data = []

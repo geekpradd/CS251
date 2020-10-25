@@ -10,6 +10,10 @@ id_to_venue = {}
 match_count = {}
 for r in rows:
 	id_code, venue = r 
+	if id_code == "NULL":
+		continue
+	if venue=="NULL":
+		continue
 	id_to_venue[id_code] = venue
 	match_count[venue] = match_count.get(venue, 0) + 1
 
@@ -20,7 +24,12 @@ rows = cur.fetchall()
 
 for r in rows:
 	run, extra_runs, match_id = r 
-
+	if match_id=="NULL":
+		continue 
+	if run == "NULL":
+		run = 0 
+	if extra_runs == "NULL":
+		extra_runs = 0
 	runs[match_id] = runs.get(match_id, 0) + run + extra_runs
 
 total_runs = {}
