@@ -45,7 +45,6 @@ public class PollutionCheck{
     public static void readPollution(File file) throws Exception{
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()) {
-            System.out.println("entry[0]");
             // HRY712, 26, 0.5, 278
             String[] entry = sc.nextLine().split(",");
             int index = Collections.binarySearch(vehicle, new Vehicle(entry[0].trim()), new Comparator<Vehicle>() {
