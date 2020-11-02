@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class GUI extends JFrame {
-    private static File file = new File("");
+    private static File file = null;
 
     public GUI() {
         setLayout(new FlowLayout());
@@ -43,25 +43,26 @@ public class GUI extends JFrame {
 				Scanner sc;
                 try {
                     sc = new Scanner(file);
-                } catch (FileNotFoundException e1) {
+                } catch (Exception e1) {
                     JOptionPane.showMessageDialog(null, "Error in opening file", "error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
+                try {
                 while (sc.hasNextLine()) {
                     String s = sc.nextLine();
                     int lastIndex = s.lastIndexOf("-");
                     String hash = s.substring(lastIndex + 1).trim();
                     String actual = s.substring(0, lastIndex).trim();
-                    try {
                         if (hash.equals(MD5.getHash(actual))) {
                             Tmodel.addRow(new Object[]{actual, "verified"});
                         } else 
-                            Tmodel.addRow(new Object[]{actual, "not verified"});
-                    } catch (NoSuchAlgorithmException e) {
-                        e.printStackTrace();
-                        return;
-                    }
+                            Tmodel.addRow(new Object[]{actual, "not verified"});   
                   }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Error in processing file "+file.getName(), "error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
                 sc.close();
             tablepanel.setVisible(true);
             pack();    
