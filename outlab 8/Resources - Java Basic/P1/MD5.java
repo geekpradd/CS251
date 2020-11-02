@@ -6,7 +6,6 @@ import java.math.BigInteger;
 
 class MD5 {
     public static void main(String args[]) throws Exception {
-        System.out.println("sdfsdf");
         File file = new File("MD5sums");
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
