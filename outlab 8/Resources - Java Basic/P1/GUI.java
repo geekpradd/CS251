@@ -3,11 +3,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.event.*;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 public class GUI extends JFrame {
@@ -61,6 +58,7 @@ public class GUI extends JFrame {
                 } catch (Exception e) {
                     e.printStackTrace();
                     JOptionPane.showMessageDialog(null, "Error in processing file "+file.getName(), "error", JOptionPane.ERROR_MESSAGE);
+                    sc.close();
                     return;
                 }
                 sc.close();
