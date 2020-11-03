@@ -14,7 +14,7 @@ public class Sieve{
             num = num.filter(i -> (i%p!=0)||(i==p));
             return p;
         }).reduce(0, (x,y) -> x=x);
-        String prime = num.mapToObj(p->Integer.toString(p)).collect(Collectors.joining(", "));
+        String prime = num.mapToObj(p->Integer.toString(p)).collect(Collectors.joining(" "));
         System.out.println(prime);
     }
 }
