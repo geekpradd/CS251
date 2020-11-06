@@ -51,22 +51,4 @@ class StreamingApp
 		}
 		return fav;
 	}
-
-
-// Remove after testing
-	public static void main(String[] args) {
-		Map<String, ArrayList<String> > user = new HashMap<>();
-		Map<String, ArrayList<String> > genre = new HashMap<>();
-		user.put("David",new ArrayList<String>(Arrays.asList(new String[]{"The Conjuring", "Shoah", "The Purge", "13th", "The Dictator"})));
-		user.put("Emma", new ArrayList<String>(Arrays.asList(new String[]{"The Matrix", "Captian America", "John Wick"})));
-		genre.put("Horror",new ArrayList<String>(Arrays.asList(new String[]{"The Conjuring","The Purge"})));
-		genre.put("Action",new ArrayList<String>(Arrays.asList(new String[]{"John Wick"})));
-		genre.put("Documentary",new ArrayList<String>(Arrays.asList(new String[]{"Shoah", "13th"})));
-		genre.put("Science Fiction",new ArrayList<String>(Arrays.asList(new String[]{"The Matrix", "Captian America"})));
-		genre.put("Comedy",new ArrayList<String>(Arrays.asList(new String[]{"The Dictator"})));
-		Map<String, ArrayList<String> > fav = getFavouriteGenres(user, genre);
-		for(Map.Entry<String, ArrayList<String>> m: fav.entrySet()) {
-			System.out.println(m.toString());
-		}
-	}
 }
