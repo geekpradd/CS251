@@ -13,7 +13,7 @@ class MD5 {
             int lastIndex = s.lastIndexOf("-");
             // String hash = s.substring(lastIndex + 1).trim();
             // String actual = s.substring(0, lastIndex).trim();
-            String hash = s.substring(lastIndex + 2);
+            String hash = s.substring(lastIndex + 1).trim();
             String actual = s.substring(0, lastIndex-1);
 
             // System.out.println(hash);
