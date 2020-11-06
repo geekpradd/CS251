@@ -49,9 +49,11 @@ public class GUI extends JFrame {
                 while (sc.hasNextLine()) {
                     String s = sc.nextLine();
                     int lastIndex = s.lastIndexOf("-");
-                    String hash = s.substring(lastIndex + 1).trim();
-                    String actual = s.substring(0, lastIndex).trim();
-                        if (hash.equals(MD5.getHash(actual))) {
+                    // String hash = s.substring(lastIndex + 1).trim();
+                    // String actual = s.substring(0, lastIndex).trim();
+                    String hash = s.substring(lastIndex + 2);
+                    String actual = s.substring(0, lastIndex-1);
+                    if (hash.equals(MD5.getHash(actual))) {
                             Tmodel.addRow(new Object[]{actual, "verified"});
                         } else 
                             Tmodel.addRow(new Object[]{actual, "not verified"});   
