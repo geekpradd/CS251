@@ -45,6 +45,7 @@ public class GUI extends JFrame {
                     return;
                 }
                 try {
+                    Tmodel.setRowCount(0);
                 while (sc.hasNextLine()) {
                     String s = sc.nextLine();
                     int lastIndex = s.lastIndexOf("-");
