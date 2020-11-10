@@ -7,7 +7,7 @@ w1 = open("w1.txt","w")
 w2 = open("w2.txt","w")
 # common = 0
 for i in range(x):
-    num = str(random.randint(0,100*x)) + "\n"
+    num = str(random.randint(0,10*x)) + "\n"
     if random.random()<0.5:
         r1.write(num)
     else:
@@ -15,9 +15,9 @@ for i in range(x):
     
     if random.random()<0.5:
         w1.write(num)
-    else:
+    # else:
         # common+=1
-        w2.write(num)
+        # w2.write(num)
 
 # print("2xNumber of common = {}".format(2*common))
 for i in range(x):

@@ -9,7 +9,7 @@ for i in $( seq 0 $2 ); do
         set -- $r
         echo "number of lines:" $(($9+$5+$7+6))
         java readwrite/FinalTester > o
-        python3 tester.py  $(($9+$5+$7+6))
+        python3 tester.py  $(($9+$5+$7+6)) $(($1+$3+2))
     )
     echo $log
     printf "Iteration number "$i": "

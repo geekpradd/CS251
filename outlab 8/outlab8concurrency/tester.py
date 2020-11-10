@@ -13,6 +13,7 @@ if a[i].strip()!="WE":
     exit()
 wc = 0
 rc = 0
+rf = 0
 while i<len(a):
     s = a[i].strip()
     if s=="WE":
@@ -32,7 +33,12 @@ while i<len(a):
             break
         if s=="RS":
             rc+=1
+        else:
+            rf+=1
     i+=1
 
+if(rf+rc != int(sys.argv[2])):
+    print("ERROR")
+    print("all reads not done")
 print("successful reads: {}".format(rc))
 print("writes: {}".format(wc))
