@@ -18,17 +18,20 @@ public class ReaderWriter implements Runnable {
             Scanner sc = new Scanner(fs);
 
             while (sc.hasNextLine()){
-                if (isWriter){
-                    tree.write(sc.nextInt());
-                }
-                else {
-                    try {
-                        tree.read(sc.nextInt());
+                try{
+                    if (isWriter){
+                        tree.write(sc.nextInt());
                     }
-                    catch (Exception e){
-                        e.printStackTrace();
+                    else {
+                        try {
+                            tree.read(sc.nextInt());
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
                     }
-                    
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
             }
             sc.close();
