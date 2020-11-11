@@ -1,0 +1,4 @@
+8
+https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/Condition.html
+https://winterbe.com/posts/2015/04/30/java8-concurrency-tutorial-synchronized-locks-examples/
+https://www.tutorialspoint.com/java_concurrency/concurrency_condition.htm
