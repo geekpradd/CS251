@@ -1,0 +1,7 @@
+https://developer.android.com/guide/topics/ui/layout/cardview
+https://stackoverflow.com/questions/17277618/get-color-value-programmatically-when-its-a-reference-theme
+https://developer.android.com/guide/topics/ui/layout/recyclerview
+https://www.androidauthority.com/use-web-api-android-1152645/
+https://developer.android.com/training/permissions/requesting#manage-request-code-yourself
+https://developer.android.com/guide/topics/ui/notifiers/toasts
+https://stackoverflow.com/questions/36127734/detect-when-recyclerview-reaches-the-bottom-most-position-while-scrolling
